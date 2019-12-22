@@ -3,4 +3,7 @@
 *.swp
 *~
 
+# Don't check our keys into GitHub
+keys/
+
 

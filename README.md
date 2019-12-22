@@ -65,7 +65,7 @@ These are some helper scripts I wrote to help streamline my development:
 
 ## Credits
 
-- <a href="https://github.com/panubo/docker-sshd">SSHD Container for Docker</a> - It used in this package, and I've found it to be quite handy!
+- <a href="https://github.com/panubo/docker-sshd">SSHD Container for Docker</a> - It's used in this package, and I've found it to be quite handy!
 
 ## Contact
 

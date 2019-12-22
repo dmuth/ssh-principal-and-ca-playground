@@ -1,0 +1,22 @@
+
+#
+# Built from https://github.com/panubo/docker-sshd
+#
+FROM docker.io/panubo/sshd:1.0.3 
+
+# Add bash and netcat
+RUN apk update \
+	&& apk add bash
+
+# TEST
+#adduser user1
+#adduser user2
+#adduser user3
+# set up ssh directories similar to root!
+
+
+# No need for an ENTRYPOINT, as the source Docker image provides one.
+
+ENTRYPOINT /entrypoint.sh
+
+

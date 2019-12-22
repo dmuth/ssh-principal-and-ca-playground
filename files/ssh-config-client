@@ -1,0 +1,14 @@
+
+#
+# Set up SSH config for connecting to the source host 
+# to use our test key and not check the host key.
+#
+Host server*
+	IdentityFile /keys/my-key
+	StrictHostKeyChecking no
+
+Host ca*
+	IdentityFile /keys/my-key
+	StrictHostKeyChecking no
+
+

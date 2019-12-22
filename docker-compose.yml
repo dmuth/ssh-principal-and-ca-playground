@@ -1,0 +1,46 @@
+
+version: '3'
+
+services:
+
+  # 
+  # Our client container.  We'll SSH form here.
+  # 
+  client:
+    build:
+      context: .
+      dockerfile: files/Dockerfile-client
+    volumes:
+      - ./files/entrypoint-client.sh:/entrypoint.sh
+      - ./files/motd-client:/etc/motd
+      - ./files/ssh-config-client:/root/.ssh/config
+      - ./keys:/keys
+      - .:/mnt
+
+  server:
+    #
+    # Our server container.  This will accept SSH keys.
+    #
+    # 
+    # Docs for this excelent container available at:
+    # 
+    # https://github.com/panubo/docker-sshd
+    # 
+    build:
+      context: .
+      dockerfile: files/Dockerfile-server
+
+    volumes:
+      - ./files/entrypoint-server.sh:/entrypoint.sh
+      - ./keys/my-key.pub:/root/.ssh/authorized_keys
+      - ./files/motd-server:/etc/motd
+      - .:/mnt
+
+    environment:
+      - SSH_ENABLE_ROOT=true
+      #- SSH_USERS=user1:1000:1000,user2:1001:1001,user3:1002:1002
+
+
+# TODO: Create ca
+
+

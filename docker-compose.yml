@@ -32,6 +32,7 @@ services:
 
     volumes:
       - ./files/entrypoint-server.sh:/entrypoint.sh
+      - ./files/sshd-config-server:/etc/ssh/sshd_config
       - ./keys/my-key.pub:/root/.ssh/authorized_keys
       - ./files/motd-server:/etc/motd
       - ./files/profile-server:/profile

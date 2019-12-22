@@ -54,7 +54,7 @@ These are some helper scripts I wrote to help streamline my development:
 
 ## Notes/Bugs
 
-- Logging in as the `root` user in this app is for demo purposes only.  DO NOT allow root logins on a produciton system!
+- Logging in as the `root` user in this app is for demo purposes only.  DO NOT allow root logins on a production system!
 
 
 ## External Links

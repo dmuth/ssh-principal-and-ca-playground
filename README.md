@@ -19,7 +19,11 @@
 
 - <a href="https://engineering.fb.com/security/scalable-and-secure-access-with-ssh/">Scalable and secure access with SSH</a> - The original article from Facebook's engineering blog which got me started down this path.
 - <a href="https://smallstep.com/blog/use-ssh-certificates/">If you’re not using SSH certificates you’re doing SSH wrong</a>
+- <a href="https://github.com/vedetta-com/vedetta/blob/master/src/usr/local/share/doc/vedetta/OpenSSH_Principals.md">OpenSSH Principals</a>
 
+## Credits
+
+- <a href="https://github.com/panubo/docker-sshd">SSHD Container for Docker</a> - It used in this package, and I've found it to be quite handy!
 
 ## Contact
 

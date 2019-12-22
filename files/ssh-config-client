@@ -8,6 +8,10 @@ Host server*
 	StrictHostKeyChecking no
 
 Host ca*
+	#
+	# Note that we don't have to change anything here, SSH will look
+	# for my-key-cert.pub and include it accordingly.  Nifty!
+	#
 	IdentityFile /keys/my-key
 	StrictHostKeyChecking no
 

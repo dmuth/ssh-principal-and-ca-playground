@@ -15,6 +15,10 @@ HostKey /etc/ssh/keys/ssh_host_ed25519_key
 # Tell this server what CA public key to trust.
 # Any key that's signed with this can log in as users defined by the principal in that key.
 #
-#TrustedUserCAKeys /keys/ca.pub
 TrustedUserCAKeys /ca.pub
+
+#
+# Tell the server where to get a list of authorized Principals for each user.
+#
+AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u
 

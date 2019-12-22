@@ -87,7 +87,7 @@ cmd_comment_no_pass "CA" -f ca
 echo "# "
 echo "# Signing user key with CA key"
 echo "# "
-cmd ssh-keygen -s ca -I playground -n root -V +1w -z 1 my-key.pub
+cmd ssh-keygen -s ca -I playground -n root,user2 -V +1w -z 1 my-key.pub
 
 cmd ssh-keygen -L -f ./my-key-cert.pub
 

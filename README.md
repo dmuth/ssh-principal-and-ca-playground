@@ -1,7 +1,9 @@
 
+<a href="./img/logo.png"><img src="./img/logo.png" align="right" /></a>
 
 # SSH Principal and CA Playground
 
+Ever wanted to play around with SSH Principals and see how they work?  This little package I put together creates a series of Docker containers which make use of Principals in SSH.
 
 
 ## Usage
@@ -63,9 +65,12 @@ These are some helper scripts I wrote to help streamline my development:
 - <a href="https://smallstep.com/blog/use-ssh-certificates/">If you’re not using SSH certificates you’re doing SSH wrong</a>
 - <a href="https://github.com/vedetta-com/vedetta/blob/master/src/usr/local/share/doc/vedetta/OpenSSH_Principals.md">OpenSSH Principals</a>
 
+
 ## Credits
 
 - <a href="https://github.com/panubo/docker-sshd">SSHD Container for Docker</a> - It's used in this package, and I've found it to be quite handy!
+- The logo was made over at <a href="https://www.freelogodesign.org/">https://www.freelogodesign.org/</a>
+
 
 ## Contact
 

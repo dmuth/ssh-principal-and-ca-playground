@@ -54,6 +54,12 @@ These are some helper scripts I wrote to help streamline my development:
 - `./bin/logs.sh` - Display logs from all containers, or a single container if specified.
 
 
+## Troubleshooting
+
+- I recommend making heavy use if `docker-compose logs -f ca`, as status messages from `sshd` will be sent there.  On a successful login, a message like this will appear:
+   - `Accepted publickey for user1 from 172.21.0.3 port 34756 ssh2: ECDSA-CERT ID playground (serial 1) CA ECDSA SHA256:nR3ohRIBi2b29PgwLrqXvaO+qGlTdQBQyrI1KSHWG6k`
+
+
 ## Notes/Bugs
 
 - Logging in as the `root` user in this app is for demo purposes only.  DO NOT allow root logins on a production system!

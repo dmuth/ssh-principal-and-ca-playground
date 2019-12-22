@@ -1,5 +1,7 @@
 
 echo "# "
+echo "# Welcome to the server container!"
+echo "# "
 echo "# You are logged in as user ${USER}!"
 echo "# "
 

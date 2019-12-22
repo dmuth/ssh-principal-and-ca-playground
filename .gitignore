@@ -6,4 +6,6 @@
 # Don't check our keys into GitHub
 keys/
 
+# Steve Jobs
+.DS_Store
 

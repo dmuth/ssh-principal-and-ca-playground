@@ -6,6 +6,8 @@
 Host server*
 	IdentityFile /keys/my-key
 	StrictHostKeyChecking no
+	PasswordAuthentication no
+
 
 Host ca*
 	#
@@ -14,5 +16,6 @@ Host ca*
 	#
 	IdentityFile /keys/my-key
 	StrictHostKeyChecking no
+	PasswordAuthentication no
 
 

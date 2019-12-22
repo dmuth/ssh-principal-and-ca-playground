@@ -9,6 +9,8 @@
 # Errors are fatal
 set -e
 
+pushd $(dirname $0) > /dev/null
+
 #
 # Define ANSI for our colors (and turning off the color)
 #
@@ -80,42 +82,59 @@ function run() {
 
 	fi
 
-} # End of test()
+} # End of run()
 
 
-run docker-compose exec client ssh root@server whoami
-run docker-compose exec client ssh user1@server whoami
-run docker-compose exec client ssh user2@server whoami
-run docker-compose exec client ssh user3@server whoami
-run fail_ok docker-compose exec client ssh userFAIL@server whoami
+#
+# Run all of our tests
+#
+function run_tests() {
 
-run docker-compose exec client ssh root@ca whoami
-run docker-compose exec client ssh user1@ca whoami
-run docker-compose exec client ssh user2@ca whoami
-run fail_ok docker-compose exec client ssh user3@ca whoami
-run fail_ok docker-compose exec client ssh userFAIL@ca whoami
+	run docker-compose exec client ssh root@server whoami
+	run docker-compose exec client ssh user1@server whoami
+	run docker-compose exec client ssh user2@server whoami
+	run docker-compose exec client ssh user3@server whoami
+	run fail_ok docker-compose exec client ssh userFAIL@server whoami
 
-printf "Results:  Num Passes: ${GREEN}%d${NC}     Num Fails: ${RED}%d${NC}\n" $NUM_PASS $NUM_FAIL
+	run docker-compose exec client ssh root@ca whoami
+	run docker-compose exec client ssh user1@ca whoami
+	run docker-compose exec client ssh user2@ca whoami
+	run fail_ok docker-compose exec client ssh user3@ca whoami
+	run fail_ok docker-compose exec client ssh userFAIL@ca whoami
 
-if test $NUM_FAIL -eq 0
-then
-	printf "Overall: ${GREEN}PASS${NC}\n"
+	printf "Results:  Num Passes: ${GREEN}%d${NC}     Num Fails: ${RED}%d${NC}\n" $NUM_PASS $NUM_FAIL
 
-else
-	printf "Overall: ${RED}FAIL${NC}\n"
+	if test $NUM_FAIL -eq 0
+	then
+		printf "Overall: ${GREEN}PASS${NC}\n"
 
-fi
+	else
+		printf "Overall: ${RED}FAIL${NC}\n"
+
+	fi
+
+} # End of run_tests()
 
 
+echo "# "
+echo "# Creating keys...."
+echo "# "
+./bin/create-keys.sh
 
-# TODO:
-# - ssh to server with each user (root, user1-3)
-# - test bad users as well
-# - ssh to ca with each user (root, user1, user2)
-# - test bad users as well
-# - keygen
-# - stand up docker
+echo "# "
+echo "# (re)building and running Docker containers..."
+echo "# "
+./bin/clean.sh
 
+echo "# "
+echo "# Containers are starting up, now sleeping for 5 seconds..."
+echo "# "
+sleep 5
+
+echo "# "
+echo "# Containers should be running by now, starting our test suite..."
+echo "# "
+run_tests
 
 echo "# Done!"
 

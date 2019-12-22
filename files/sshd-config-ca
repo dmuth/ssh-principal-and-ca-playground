@@ -1,0 +1,20 @@
+
+
+# The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+# but this is overridden so installations will only check .ssh/authorized_keys
+AuthorizedKeysFile	.ssh/authorized_keys
+
+Port 22
+
+HostKey /etc/ssh/keys/ssh_host_rsa_key
+HostKey /etc/ssh/keys/ssh_host_dsa_key
+HostKey /etc/ssh/keys/ssh_host_ecdsa_key
+HostKey /etc/ssh/keys/ssh_host_ed25519_key
+
+#
+# Tell this server what CA public key to trust.
+# Any key that's signed with this can log in as users defined by the principal in that key.
+#
+#TrustedUserCAKeys /keys/ca.pub
+TrustedUserCAKeys /ca.pub
+

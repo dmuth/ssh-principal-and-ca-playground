@@ -10,3 +10,6 @@ RUN apk update \
 
 # No need for an ENTRYPOINT, as the source Docker image provides one.
 
+ENTRYPOINT /entrypoint.sh
+
+

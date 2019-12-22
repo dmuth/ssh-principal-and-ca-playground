@@ -20,7 +20,6 @@ services:
   server:
     #
     # Our server container.  This will accept SSH keys.
-    #
     # 
     # Docs for this excelent container available at:
     # 
@@ -40,9 +39,29 @@ services:
 
     environment:
       - SSH_ENABLE_ROOT=true
-      #- SSH_USERS=user1:1000:1000,user2:1001:1001,user3:1002:1002
 
 
-# TODO: Create ca
+  ca:
+    #
+    # Our ca container.  This will only accept SSH keys signed with the CA.
+    # 
+    # Docs for this excelent container available at:
+    # 
+    # https://github.com/panubo/docker-sshd
+    # 
+    build:
+      context: .
+      dockerfile: files/Dockerfile-ca
+
+    volumes:
+      - ./files/entrypoint-ca.sh:/entrypoint.sh
+      - ./files/sshd-config-ca:/etc/ssh/sshd_config
+      - ./keys/ca.pub:/ca.pub
+      - ./files/motd-ca:/etc/motd
+      - ./files/profile-ca:/profile
+      - .:/mnt
+
+    environment:
+      - SSH_ENABLE_ROOT=true
 
 

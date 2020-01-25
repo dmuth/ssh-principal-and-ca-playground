@@ -67,6 +67,7 @@ These are some helper scripts I wrote to help streamline my development:
 
 ## External Links
 
+- <a href="https://www.dmuth.org/ssh-at-scale-cas-and-principals/">My blog post on this topic</a>
 - <a href="https://engineering.fb.com/security/scalable-and-secure-access-with-ssh/">Scalable and secure access with SSH</a> - The original article from Facebook's engineering blog which got me started down this path.
 - <a href="https://smallstep.com/blog/use-ssh-certificates/">If you’re not using SSH certificates you’re doing SSH wrong</a>
 - <a href="https://github.com/vedetta-com/vedetta/blob/master/src/usr/local/share/doc/vedetta/OpenSSH_Principals.md">OpenSSH Principals</a>

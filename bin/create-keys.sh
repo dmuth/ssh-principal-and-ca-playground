@@ -63,11 +63,8 @@ function cmd_comment_no_pass() {
 } # End of cmd_comment_no_pass()
 
 
-#
-# Set write access to any existing keys. (they are set to 400 by our containers)
-#
 echo "# "
-echo "# Setting any existing keys to writeable"
+echo "# Removing previous keys"
 echo "# "
 mkdir -p keys/
 cd keys/
